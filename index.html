@@ -64,19 +64,19 @@
             cell.insertAdjacentHTML('afterbegin', `<div class='cell'> ${i}</div>`)
         };
 
-        let player = 0;
+        let player = 'Нолик';
         const maxLength = cell.children.length;
 
         cell.onclick = (event) => {
             console.log(event.target.tagName)
             if (event.target.tagName != 'DIV' || event.target.children.length != 0) return;
-            if (player== 0) {
+            if (player== 'Нолик') {
                 addTag(event.target, '<span class="spanX45"></span> <span class="spanX45 spanX_45"> </span>');
-                player= 1;
+                player= 'Крестик';
                 isWin(event.target.lastChild.data, player, 'spanX45')
             } else {
                 addTag(event.target, '<span class="spanO"></span>');
-                player= 0;
+                player= 'Нолик';
                 isWin(event.target.lastChild.data, player, 'spanO')
             }
         };
